@@ -38,3 +38,20 @@ fun main(args: Array<String>) {
   writer.close()               // Closes both underlying writers
 }
 ----
+
+.Java
+[source, java]
+----
+public static void main(String[] args) throws IOException {
+  File errFile = new File("stderr.txt");
+
+  Writer writer = new TeeWriter(
+    new PrintWriter(System.err),
+    new FileWriter(errFile)
+  );
+
+  writer.write("Hello world!"); // Writes to both stderr and the target file
+  writer.flush();               // Flushes both underlying writers
+  writer.close();               // Closes both underlying writers
+}
+----
