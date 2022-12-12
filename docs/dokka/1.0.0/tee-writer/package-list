@@ -1,0 +1,10 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:io.foxcapades.lib.io////PointingToDeclaration/tee-writer/io.foxcapades.lib.io/index.html
+$dokka.location:io.foxcapades.lib.io/TeeWriter///PointingToDeclaration/tee-writer/io.foxcapades.lib.io/-tee-writer/index.html
+$dokka.location:io.foxcapades.lib.io/TeeWriter/TeeWriter/#kotlin.Array[java.io.Writer]/PointingToDeclaration/tee-writer/io.foxcapades.lib.io/-tee-writer/-tee-writer.html
+$dokka.location:io.foxcapades.lib.io/TeeWriter/close/#/PointingToDeclaration/tee-writer/io.foxcapades.lib.io/-tee-writer/close.html
+$dokka.location:io.foxcapades.lib.io/TeeWriter/flush/#/PointingToDeclaration/tee-writer/io.foxcapades.lib.io/-tee-writer/flush.html
+$dokka.location:io.foxcapades.lib.io/TeeWriter/write/#kotlin.CharArray?#kotlin.Int#kotlin.Int/PointingToDeclaration/tee-writer/io.foxcapades.lib.io/-tee-writer/write.html
+io.foxcapades.lib.io
+
