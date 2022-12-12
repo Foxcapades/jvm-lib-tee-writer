@@ -29,6 +29,11 @@ val javadocJar = tasks.register<Jar>("javadocJar") {
   from(file("docs/dokka/${project.version}"))
 }
 
+val sourcesJar = tasks.register<Jar>("sourcesJar") {
+  archiveClassifier.set("sources")
+  from(sourceSets.main.get().allSource)
+}
+
 tasks.withType<Jar> {
   enabled = true
 }
@@ -46,8 +51,11 @@ publishing {
   }
 
   publications {
-    withType<MavenPublication> {
+    create<MavenPublication>("maven") {
       artifact(javadocJar)
+      artifact(sourcesJar)
+
+      from(components["java"])
 
       pom {
         name.set("tee-writer")
