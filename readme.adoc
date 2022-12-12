@@ -1,0 +1,40 @@
+= K-Deque
+:source-highlighter: highlightjs
+:gh-group: foxcapades
+:gh-name: jvm-lib-tee-writer
+:lib-package: io.foxcapades.lib.io
+:lib-group: io.foxcapades.lib
+:lib-name: tee-writer
+:lib-version: 1.0.0
+:lib-feature: 1.0.0
+
+image:https://img.shields.io/github/license/{gh-group}/{gh-name}[title="License"]
+image:https://img.shields.io/badge/docs-dokka-ff69b4[link="https://{gh-group}.github.io/{gh-name}/dokka/{lib-feature}/{lib-name}/{lib-package}/index.html"]
+image:https://img.shields.io/maven-central/v/{lib-group}/{lib-name}[link="https://search.maven.org/artifact/{lib-group}/{lib-name}"]
+
+Tee `Writer` implementation.
+
+A writer that performs actions on a collection of configured underlying writers.
+
+== Import
+
+[source, kotlin, subs="attributes"]
+----
+  implementation("{lib-group}:{lib-name}:{lib-version}")
+----
+
+== Usage
+
+.Kotlin
+[source, kotlin]
+----
+fun main(args: Array<String>) {
+  val errFile = File("stderr.txt")
+
+  val writer = TeeWriter(System.err.writer(), errFile.writer())
+
+  writer.write("Hello world!") // Writes to both stderr and the target file
+  writer.flush()               // Flushes both underlying writers
+  writer.close()               // Closes both underlying writers
+}
+----
